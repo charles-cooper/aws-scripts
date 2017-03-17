@@ -1,0 +1,6 @@
+#!/bin/sh
+instance_id=$1
+shift
+instance_type=$1
+shift
+aws ec2 modify-instance-attribute --instance-id $instance_id --instance-type "{\"Value\": \"$instance_type\"}"

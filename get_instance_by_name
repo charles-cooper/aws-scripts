@@ -1,0 +1,6 @@
+#!/bin/sh
+name=$1
+select_by_name=".Reservations | map(.Instances) | map (select(.[0].Tags | map(select(.Key == \"Name\")) | select(.[0].Value==\"$1\"))) | .[0][0]"
+get_instance_id=".InstanceId"
+instance_id=$(aws ec2 describe-instances | jq "$select_by_name" | jq "$get_instance_id")
+echo $instance_id

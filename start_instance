@@ -1,0 +1,4 @@
+#!/bin/sh
+instance_id=$1
+shift
+aws ec2 start-instances --instance-ids "$instance_id"
