@@ -1,5 +1,5 @@
 #!/bin/sh
-instance_id=$1
+instance_id=$(cat $1)
 shift
 instance_type=$1
 shift
