@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+ip_address=$1
+shift
+while [[ "$(ssh-keyscan $ip_address | wc -c)" -eq 0 ]]
+do
+  sleep 5
+done
