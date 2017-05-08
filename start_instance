@@ -1,4 +1,4 @@
 #!/bin/sh
 instance_id=$(cat $1)
 shift
-aws ec2 start-instances --instance-ids "$instance_id"
+aws "$@" ec2 start-instances --instance-ids "$instance_id"
